@@ -228,7 +228,7 @@ int log_dump_compress_lastblock(void)
 
 	last_comp_block_size = CONFIG_LOG_DUMP_CHUNK_SIZE;
 
-	compress_ret = compress_block(&last_comp_block[4],&last_comp_block_size,  (unsigned char *)uncomp_buf[uncomp_idx], uncomp_curbytes);
+	compress_ret = compress_block((unsigned char *)&last_comp_block[4],(unsigned long *)&last_comp_block_size,  (unsigned char *)uncomp_buf[uncomp_idx], uncomp_curbytes);
 
 	if (compress_ret != LOG_DUMP_OK) {
 		ldpdbg("Fail to compress compress_ret = %d\n", compress_ret);

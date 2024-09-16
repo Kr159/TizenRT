@@ -136,7 +136,7 @@ int unload_module(FAR struct binary_s *binp)
 {
 	int ret;
 	int section_idx;
-
+	
 	if (binp) {
 		/* Perform any format-specific unload operations */
 
